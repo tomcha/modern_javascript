@@ -1,4 +1,4 @@
-modan_javaxcript
+modern_javascript
 ================
 やさしくわかるモダンjavascript入門の写経用リポジトリ。  
 
