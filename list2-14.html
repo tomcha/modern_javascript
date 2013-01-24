@@ -1,0 +1,23 @@
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <head>
+        <script type="text/javascript" charset="utf-8">
+            var arr = {
+                "国語":98,
+                "算数":82,
+                "理科":70,
+                "社会":86,
+                "英語":53,
+            };
+            var total = 0;
+            var msg = "";
+            for(var key in arr){
+                msg += key +arr[key] + "\n";
+                total += arr[key];
+            }
+            msg += "合計" + total + "\n";
+            msg += "平均" + (total / 5);
+            alert(msg);
+        </script>
+    </head>
+</html>

@@ -1,0 +1,45 @@
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <head>
+        <script type="text/javascript" charset="utf-8">
+            function Seiseki(name){
+                this.name = name;
+
+                this.setTensu = function(a,b,c,d,e){
+                    this.kokugo = a;
+                    this.sansu = b;
+                    this.rika = c;
+                    this.syakai = d;
+                    this.eigo = e;
+                };
+                this.goukei = function(){
+                    var total = 0;
+                    total += this.kokugo;
+                    total += this.sansu;
+                    total += this.rika;
+                    total += this.syakai;
+                    total += this.eigo;
+                    return total;
+                };
+                this.heikin = function(){
+                    var total = this.goukei();
+                    return total/5;
+                };
+                this.showMsg = function(){
+                    var msg = this.name + "さんの成績\n";
+                    msg += "合計:" + this.goukei() + "\n";
+                    msg += "平均:" + this.heikin() + "\n";
+                    alert(msg);
+                };
+            }
+            
+            var taro = new Seiseki("太郎");
+            taro.setTensu(75,58,69,81,47);
+            taro.showMsg();
+
+            var hanako = new Seiseki("花子");
+            hanako.setTensu(98,79,81,93,85);
+            hanako.showMsg();
+        </script>
+    </head>
+</html>

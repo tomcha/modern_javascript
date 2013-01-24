@@ -1,0 +1,46 @@
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <head>
+        <script type="text/javascript" charset="utf-8">
+            function Kaimono(){
+                Kaimono.rate = 0.05;
+                this.setData = function(){
+                    this.data = this.setData.arguments;
+                };
+
+                this.getTotal = function(){
+                    var total = 0;
+                    for(var n in this.data){
+                        total += this.data[n];
+                    };
+                    return total;
+                };
+
+                this.getTax = function(){
+                    return Math.floor(this.getTotal() * Kaimono.rate);
+                };
+
+                this.showMsg = function(){
+                    var msg = "合計:" + this.getTotal() + "円\n";
+                    msg += "消費税:" + this.getTax() + "円";
+                    alert(msg);
+                };
+            }
+
+            Kaimono.setRate = function(n){
+                Kaimono.rate = n/100;
+            }
+            var obj = new Kaimono();
+            obj.setData(190,270,450,185,970);
+            obj.showMsg();
+
+            var obj2 = new Kaimono();
+            obj2.setData(1560,2180,3345);
+            obj2.showMsg();
+
+            Kaimono.setRate(10);
+            obj.showMsg();
+            obj2.showMsg();
+        </script>
+    </head>
+</html>

@@ -1,0 +1,33 @@
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <head>
+        <script>
+            function Seiseki(name){
+                this.name = name;
+
+                this.setTensu = function(a,b,c,d,e){
+                    this.kokugo = a;
+                    this.sansu = b;
+                    this.rika = c;
+                    this.syakai = d;
+                    this.eigo = e;
+                };
+            }
+
+            var taro = new Seiseki("太郎");
+            taro.setTensu(75,58,69,81,47);
+
+            var hanako = new Seiseki("花小");
+            hanako.setTensu(98,79,81,93,85);
+
+            Seiseki.prototype.getDataToStr = function(){
+                var data = this.name + "さんの点数\n" +
+                "国語:" + this.kokugo + " 算数:" + this.sansu + " 理科:" + this.rika + " 社会:" + this.syakai + " 英語:" + this.eigo;
+                return data;
+            };
+
+            alert(taro.getDataToStr());
+            alert(hanako.getDataToStr());
+        </script>
+    </head>
+</html>

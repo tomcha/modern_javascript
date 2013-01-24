@@ -1,0 +1,54 @@
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <head>
+        <script type="text/javascript" charset="utf-8">
+            function Seiseki(name){
+                var name = name;
+
+                this.setTensu = function(a,b,c,d,e){
+                    this.kokugo = a;
+                    this.sansu = b;
+                    this.rika = c;
+                    this.syakai = d;
+                    this.eigo = e;
+                };
+                this.goukei = function(){
+                    var total = 0;
+                    total += this.kokugo;
+                    total += this.sansu;
+                    total += this.rika;
+                    total += this.syakai;
+                    total += this.eigo;
+                    return total;
+                };
+                this.heikin = function(){
+                    var total = this.goukei();
+                    return total/5;
+                };
+                this.showMsg = function(){
+                    var msg = name + "さんの合計:" + this.goukei() + "\n";
+                    msg += "平均:" + this.heikin();
+                    alert(msg);
+                };
+            };
+
+            function PowerSeiseki(name){
+                Seiseki.call(this,name);
+                this.showMsg = function(){
+                    var msg = name + "さんの成績" + "\n";
+                    msg += "国語:" + this.kokugo + "\n";
+                    msg += "算数:" + this.sansu + "\n";
+                    msg += "理科:" + this.rika + "\n";
+                    msg += "社会:" + this.syakai + "\n";
+                    msg += "英語:" + this.eigo + "\n";
+                    msg += "合計:" + this.goukei() + "\n";
+                    msg += "平均:" + this.heikin()+ "\n";
+                    alert(msg);
+                };
+            };
+            var taro = new PowerSeiseki("太郎");
+            taro.setTensu(75,58,69,81,47);
+            taro.showMsg();
+        </script>
+    </head>
+</html>

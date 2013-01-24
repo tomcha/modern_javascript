@@ -1,0 +1,62 @@
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <head>
+        <script type="text/javascript" charset="utf-8">
+            function Seiseki(name){
+                this.name = name;
+                this.setTensu = function(a,b,c,d,e){
+                    this.kokugo = a;
+                    this.sansu = b;
+                    this.rika = c;
+                    this.syakai = d;
+                    this.eigo = e;
+                };
+                
+                this.showMsg = function() {
+                    alert(this.name + "さんの成績オブジェクトです。");
+                };
+            }
+            var taro = new Seiseki("太郎");
+            taro.setTensu(75,58,69,81,47);
+            
+            var hanako = new Seiseki("花子");
+            hanako.setTensu(98,79,81,93,85);
+
+            taro.showMsg();
+            hanako.showMsg();
+
+            taro.goukei = function(){
+                var total = 0;
+                total += this.kokugo;
+                total += this.sansu;
+                total += this.rika;
+                total += this.syakai;
+                total += this.eigo;
+                return total;
+            };
+            
+            taro.showMsg = function(){
+                var msg = this.name + "さんの成績合計:" + this.goukei();
+                alert(msg);
+            };
+            
+            hanako.heikin= function(){
+                total = 0;
+                total += this.kokugo;
+                total += this.sansu;
+                total += this.rika;
+                total += this.syakai;
+                total += this.eigo;
+                return total/5;
+            };
+
+            hanako.showMsg = function(){
+                var msg = this.name + "さんの平均:" + this.heikin();
+                alert(msg);
+            };
+
+            taro.showMsg();
+            hanako.showMsg();
+        </script>
+    </head>
+</html>

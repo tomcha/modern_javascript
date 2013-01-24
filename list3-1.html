@@ -1,0 +1,31 @@
+<html>
+    <meta http-equiv="Contents-Type" content="text/html; charset=utf-8">
+    <head>
+        <script type="text/javascript" charset="utf-8">
+            var obj = new Object();
+            obj.kokugo = 98;
+            obj.sansu = 82;
+            obj.rika = 70;
+            obj.syakai = 86;
+            obj.eigo = 53;
+
+            obj.goukei = function(){
+                var total = 0;
+                total += this.kokugo;
+                total += this.sansu;
+                total += this.rika;
+                total += this.syakai;
+                total += this.eigo;
+                return total;
+            };
+            
+            obj.heikin = function(){
+                var total = this.goukei();
+                return total / 5;
+            };
+            var msg = "合計:" + obj.goukei() + "\n";
+            msg += "平均:" + obj.heikin() + "\n";
+            alert(msg);
+        </script>
+    </head>
+</html>
