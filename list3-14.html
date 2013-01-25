@@ -1,0 +1,53 @@
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <head>
+        <script>
+            function Seiseki(name){
+                this.name = name;
+                this.setTensu = function(a,b,c,d,e){
+                    this.kokugo = a;
+                    this.sansu = b;
+                    this.rika = c;
+                    this.syakai = d;
+                    this.eigo = e;
+                };
+
+                this.goukei = function(){
+                    var total = 0;
+                    total += this.kokugo;
+                    total += this.sansu;
+                    total += this.rika;
+                    total += this.syakai;
+                    total += this.eigo;
+                    return total;
+                };
+            }
+
+            //callでSeisekiを継承したオブジェクト
+            function PowerSeiseki(name){
+                Seiseki.call(this,name);
+            };
+
+            //prototypeでSeisekiを設定したオブジェクト
+            function UltraSeiseki(name){
+                this.name = name;
+            };
+            UltraSeiseki.prototype = new Seiseki();
+
+            var taro = new Seiseki("太郎");
+            taro.setTensu(98,76,54,56,78);
+
+            //callで継承したもの 
+            var hanako = new PowerSeiseki("花子");
+            hanako.setTensu(100,99,99,72,94);
+
+            //prototypeを使って付け替えたもの
+            var ichiro = new UltraSeiseki("一郎");
+            ichiro.setTensu(55,66,77,88,99);
+
+            alert(taro instanceof Seiseki);
+            alert(hanako instanceof Seiseki);
+            alert(ichiro instanceof Seiseki);
+        </script>
+    </head>
+</html>

@@ -12,8 +12,21 @@
 
             function DtoY(){
                 this.rate = 86;
-                this.calc 
+                this.calc = function(n){
+                    var res = Math.floor(n * this.rate);
+                    alert(DtoY.name + ":" + res + "円");
+                };
             }
+
+            function Translate(){};
+            
+            Translate.prototype = new YtoD();
+            var obj1 = new Translate();
+            obj1.calc(1230);
+
+            Translate.prototype = new DtoY();
+            var obj2 = new Translate();
+            obj2.calc(1230);
         </script>
     </head>
 </html>

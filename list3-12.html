@@ -1,0 +1,29 @@
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <head>
+        <script>
+            function Seiseki(name){
+                var name = name;
+
+                this.setTensu = function(a,b,c,d,e){
+                    this.kokugo = a;
+                    this.sansu = b;
+                    this.rika = c;
+                    this.syakai = d;
+                    this.eigo = e;
+                };
+
+                this.toString = function(){
+                    var msg = name + "さんの成績\n" + 
+                    "国語:" + this.kokugo + "算数:" + this.sansu + "理科:" + this.rika + "社会:" + this.syakai + "英語:" + this.eigo;
+                    return msg;
+                    
+                };
+            }
+
+            var taro = new Seiseki("太郎");
+            taro.setTensu(98,76,54,56,78);
+            alert(taro);
+        </script>
+    </head>
+</html>

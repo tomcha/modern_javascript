@@ -1,0 +1,66 @@
+<html>
+    <meta http-equiv="Content-Type" content="text/javascript; charset=utf-8">
+    <head>
+        <script>
+            function Seiseki(){
+                var count = Seiseki.arguments.length -1;
+                var name = Seiseki.arguments[0];
+                this.kokugo = Seiseki.arguments[1];
+                this.sansu = Seiseki.arguments[2];
+                this.rika = Seiseki.arguments[3];
+                this.syakai = Seiseki.arguments[4];
+                this.eigo = Seiseki.arguments[5];
+                
+                this.goukei = function(){
+                    var total = 0;
+                    if(this.kokugo != undefined){
+                        total += this.kokugo;
+                    }
+                    if(this.sansu != undefined){
+                        total += this.sansu;
+                    }
+                    if(this.rika != undefined){
+                        total += this.rika;
+                    }
+                    if(this.syakai != undefined){
+                        total += this.syakai;
+                    }
+                    if(this.eigo != undefined){
+                        total += this.eigo;
+                    }
+                    return total;
+                };
+
+                this.heikin = function(){
+                    total = this.goukei();
+                    return total / count ;
+                };
+
+                this.showMsg = function(){
+                    var msg = name + "さんの成績\n";
+                    if(this.kokugo != undefined){
+                        msg += "国語:" + this.kokugo + "\n";
+                    };
+                    if(this.sansu != undefined){
+                        msg += "算数:" + this.sansu + "\n";
+                    };
+                    if(this.rika != undefined){
+                        msg += "理科:" + this.rika + "\n";
+                    }
+                    if(this.syakai != undefined){
+                        msg += "社会:" + this.syakai + "\n";
+                    }
+                    if(this.eigo != undefined){
+                        msg += "英語:" + this.eigo + "\n";
+                    }
+                    msg += "合計:" + this.goukei() + "\n";
+                    msg += "平均:" + this.heikin() + "\n";
+                    alert(msg);
+                };
+            };
+
+            var taro = new Seiseki( "太郎",98,76,54);
+            taro.showMsg();
+        </script>
+    </head>
+</html>
