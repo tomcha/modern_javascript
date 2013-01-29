@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <link type="text/css" href="sample.css" rel="stylesheet">
+        <script type="text/javascript" src="sample.js"></script>
+        <title>Sample Page</title>
+        <script type="text/javascript">
+            var rate = 0.05;
+
+            function doChange(){
+                rate = document.getElementById("select").value * 1;
+                doClick();
+            };
+            function doClick(){
+                var input = document.getElementById("input").value;
+                var re = Math.floor(input * (1.0 +rate));
+                var msg = document.getElementById("msg");
+                msg.innerHTML = "税込価格:" + re + "円";
+            };
+            </script>
+    </head>
+    <body>
+        <h1>Sample Page</h1>
+        <p id="msg">金額を入力:</p>
+        税率:<select id="select" onchange="doChange();">
+            <option value="0.05" selected>5%</option>
+            <option value="0.07">7%</option>
+            <option value="0.1">10%</option>
+            <option value="0.15">15%</option>
+            <option value="0.2">20%</option>
+        </select>
+        <br /><br />
+        <input type="text" id="input">
+        <input type="button" onclick="doClick();" value="クリック">
+    </body>
+</html>

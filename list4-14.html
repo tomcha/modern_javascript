@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <link type="text/css" href="sample.css" rel="stylesheet">
+        <script type="text/javascript">
+            var fontsize = 12;
+            function doClick(){
+                fontsize += 2;
+                var p1 = document.getElementById("p1");
+                p1.style.fontSize = fontsize + "pt";
+            };
+            function doBold(){
+                var p1 = document.getElementById("p1");
+                var chk = document.getElementById("check");
+                if(chk.checked){
+                    p1.style.fontWeight = "bold";
+                    p1.style.fontStyle = "italic";
+                }else{
+                    p1.style.fontWeight = "";
+                    p1.style.fontStyle = "";
+                };
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Sample Page</h1>
+        <p id="p1" onclick="doClick();">クリックしてみてください</p>
+        <input id="check" type="checkbox" onclick="doBold();">
+        <label for="check">フォントスタイル</label>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <link type="text/css" href="sample.css" rel="stylesheet">
+        <script type="text/javascript">
+            var x = 10;
+            var y = 50;
+            var w = 200;
+            var h = 50;
+
+            function doClick(){
+                var p1 = document.getElementById("p1");
+                x += 20;
+                y += 10;
+                w -= 10;
+                h += 10;
+                p1.style.left = x + "px";
+                p1.style.top = y + "px";
+                p1.style.width = w + "px";
+                p1.style.height = h + "px";
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Sample Page</h1>
+        <p id="p1" onclick="doClick();">クリックしてください</p>
+    </body>
+</html>

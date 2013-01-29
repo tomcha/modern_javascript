@@ -1,0 +1,35 @@
+<!DOCTYPE hrml>
+<html lang="ja">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <link type="text/css" href="sample.css" rel="stylesheet">
+        <script type="text/javascript">
+            function doClick(){
+                var input = document.getElementById("input").value * 1;
+                var re = input + "円を換算すると・・・<br />";
+                var options = document.getElementById("select").options;
+                for(var i=0; i<options.length ; i++){
+                    if(options[i].selected){
+                        re += options[i].innerHTML + ":" + Math.floor(input*100 / options[i].value)/100 + "<br />";
+                    };
+                };
+                var msg = document.getElementById("msg");
+                msg.innerHTML = re;
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Sample Page</h1>
+        <p id="msg">金額を入力</p>
+        税率:<select id="select" size="4" multiple>
+            <option value="80">USドル</option >
+            <option value="95">ユーロ</option>
+            <option value="125">UKポンド</option>
+            <option value="85">スイスフラン</option>
+            </select>
+            <br /><br />
+            <input type="text" id="input">
+            <input type="button" onclick="doClick();" value="クリック">
+    </body>
+</html>
+

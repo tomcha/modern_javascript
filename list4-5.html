@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="contetn-type" content="text/html; charset=UTF-8">
+        <link type="text/css" href="sample.css" rel="stylesheet">
+        <script type="text/javascript" src="sample.js"></script>
+        <script type="text/javascript">
+            function showMsg(){
+                var msg = document.getElementById("msg");
+                msg.innerHTML = "※onloadで実行したスクリプトです。";
+            };
+        </script>
+        <title>Sample Page</title>
+    </head>
+    <body onload="showMsg();">
+        <h1>Sample Page</h1>
+        <p id="msg">サンプルのページです。</p>
+    </body>
+</html>

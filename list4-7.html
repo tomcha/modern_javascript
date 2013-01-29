@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<htmL lang="ja">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <link type="text/css" href="sample.css" rel="stylesheet">
+        <script type="text/javascript" src="sample.js"></script>
+        <title>Sample Page</title>
+        <script type="text/javascript">
+            var counter = 0;
+            function doClick(){
+                var input = document.getElementById("input");
+                var n = input.value;
+                var res = Math.floor(n * 1.05);
+                var msg = document.getElementById("msg");
+                msg.innerHTML = "税込価格:" + res + "円";
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Sample Page</h1>
+        <p id="msg">金額を入力</p>
+        <input type="text" id="input">
+        <button onclick="doClick();">クリック</button>
+    </body>
+</html>

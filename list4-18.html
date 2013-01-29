@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <link type="text/css" href="sample.css" rel="stylesheet">
+        <script type="text/javascript">
+            var flg = false;
+            function doOver(e){
+                var p1 = document.getElementById("p1");
+                p1.style.background = "#99ff99";
+            }
+
+            function doOut(e){
+                var p1 = document.getElementById("p1");
+                p1.style.background = "#ccffcc";
+            }
+            
+            function doDown(e){
+                flg = true;
+                var p1 = document.getElementById("p1");
+                p1.style.background = "#66cccc";
+            }
+            
+            function doUp(e){
+                flg = false;
+                var p1 = document.getElementById("p1");
+                p1.style.background = "#aaffaa";
+            
+            }
+            
+            function doMove(event){
+                if(flg == false){return;}
+                var x = event.clientX;
+                var y = event.clientY;
+                var p1 = document.getElementById("p1");
+                p1.style.left =(x - 100) + "px";
+                p1.style.top = (y - 50) + "px";
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Sample Page</h1>
+        <p id="p1"
+            onmouseover="doOver(event);"
+            onmouseout="doOut(event);"
+            onmousedown="doDown();"
+            onmouseup="doUp();"
+            onmousemove="doMove(event);">ドラッグして</p>
+    </body>
+</html>

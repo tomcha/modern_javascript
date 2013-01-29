@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <link type="text/css" href="sample.css" rel="stylesheet">
+        <script type="text/javascript">
+            var classvalue = 0;
+            function doClick(){
+                var p1 = document.getElementById("p1");
+                switch(classvalue){
+                    case 0:
+                        p1.style.background = "#ff6666";
+                        p1.style.color = "white";
+                        break;
+                    case 1:
+                        p1.style.background = "#66ff66";
+                        p1.style.color = "white";
+                        break;
+                    case 2:
+                        p1.style.background = "";
+                        p1.style.color = "#6666ff";
+                        break;
+                };
+                classvalue++;
+                if(classvalue==3){
+                    classvalue = 0;
+                };
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Sample Page</h1>
+        <p id="p1" onclick="doClick();">クリックしてみてください</p>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="cntent-type" content="text/html; charset=UTF-8">
+        <link type="text/css" href="sample.css" rel="stylesheet">
+        <script type="text/javascript" src="sample.js"></script>
+        <title>Sample Page</title>
+        <script type="text/javascript">
+            var counter = 0;
+            function doClick(){
+                var msg = document.getElementById("msg");
+                msg.innerHTML = "カウント:" + ++counter;
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Sample Page</h1>
+        <p id="msg">※ボタンをクリック!</p>
+        <button onclick="doClick();">クリック</button>
+    </body>
+</html>
